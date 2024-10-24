@@ -1,0 +1,28 @@
+{
+  "name": "my-beautiful-dark-twisted-repo",
+  "version": "1.0.0",
+  "main": "src/app.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc ./public && ts-node src/app.ts",
+    "dev": "npm-run-all dev:*",
+    "dev:watch": "nodemon --watch 'public/*.ts' -e ts --exec tsc",
+    "dev:run": "nodemon src/app.ts",
+    "tailwind": "tailwindcss -i ./public/styles.css -o ./public/styles.output.css --watch",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7",
+    "npm-run-all": "^4.1.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
+  }
+}
