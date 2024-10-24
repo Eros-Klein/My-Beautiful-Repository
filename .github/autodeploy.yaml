@@ -8,8 +8,10 @@ jobs:
             - name: Check out repository code
               uses: actions/checkout@v4
             - run: npm install
-            - run: npm run tailwind
-            - run: npm run start
+            - run: screen -X -S juliaTailwind quit
+            - run: screen -X -S juliaRun quit
+            - run: screen -S juliaTailwind -dm bash -c "cd /var/www/html/julia/actions-runner/dist && npm run tailwind"
+            - run: screen -S juliaRun -dm bash -c "cd /var/www/html/julia/actions-runner/dist && npm run start"
             - name: List files in the repository
               run: |
                   ls ${{ github.workspace }}
