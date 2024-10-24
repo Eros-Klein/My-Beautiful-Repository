@@ -16,8 +16,8 @@ jobs:
                   if screen -list | grep -q "juliaRun"; then
                       screen -X -S juliaRun quit
                   fi
-            - run: screen -S juliaTailwind -dm bash -c "cd /var/www/html/julia/actions-runner/dist/My-Beautiful-Repository/My-Beautiful-Repository && npm run tailwind"
-            - run: screen -S juliaRun -dm bash -c "cd /var/www/html/julia/actions-runner/dist/My-Beautiful-Repository/My-Beautiful-Repository && npm run start"
+            - run: nohup screen -S juliaTailwind -dm bash -c "cd /var/www/html/julia/actions-runner/dist/My-Beautiful-Repository/My-Beautiful-Repository && npm run tailwind"
+            - run: nohup screen -S juliaRun -dm bash -c "cd /var/www/html/julia/actions-runner/dist/My-Beautiful-Repository/My-Beautiful-Repository && npm run start"
             - name: List files in the repository
               run: |
                   ls ${{ github.workspace }}
