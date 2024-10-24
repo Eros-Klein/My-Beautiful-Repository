@@ -4,7 +4,7 @@
   "main": "src/app.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc ./public && ts-node src/app.ts",
+    "start": "tsc ./public/*.ts && ts-node src/app.ts",
     "dev": "npm-run-all dev:*",
     "dev:watch": "nodemon --watch 'public/*.ts' -e ts --exec tsc",
     "dev:run": "nodemon src/app.ts",
